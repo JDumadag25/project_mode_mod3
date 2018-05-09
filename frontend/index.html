@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>MOD 3 PROJECT</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+  <style>
+
+body {
+    background-image: url('images/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding-bottom: 600px;
+
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+h6 {
+  font-size: 20px;
+  color: white;
+  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+  text-align: center;
+
+}
+
+p {
+    font-family: verdana;
+    color: white;
+    font-size: 20px;
+    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+    text-align: center;
+}
+
+.search-bar {
+  text-align: center;
+}
+
+#search {
+    width: 350px;
+    height:40px;
+    text-align: center;
+    color: black;
+}
+
+#checkboxes{
+  text-align: center;
+  background: rgba(255,255,255,0.5);
+  display: none;
+
+}
+
+.box {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+#container: {
+  width: 500px;
+  height: 500px;
+  border: 10px solid black;
+  padding: 25px;
+  margin: 25px;
+  padding-bottom: 50px;
+}
+
+#container {
+    width: 1000px;
+    /*background-color: #ffcc33;*/
+    margin: auto;
+    display: none;
+}
+
+#firstbox {
+    width: 450px;
+    float: left;
+    height: 540px;
+    background: rgba(255,255,255,0.5);
+    overflow: auto;
+}
+
+#secondbox {
+    width: 450px;
+    float: right;
+    height: 540px;
+    background: rgba(255,255,255,0.5);
+    overflow: auto;
+
+}
+
+#eventheader {
+  text-align: center
+}
+
+#youreventheader {
+  text-align: center
+}
+
+</style>
+
+
+
+</style>
+</head>
+<body>
+
+<div class="container-fluid">
+  <h1>(APP NAME IN PROGRESS)</h1>
+  <p>Please enter your Zip Code to see what events are going on in your area.</p>
+    <div class="search-bar">
+      <form id="zipcode">
+        <input type="text" id="search" placeholder="Enter Zip code"><br>
+        <button id="submit_button" class="button" type="button">SUBMIT</button>
+      </form>
+    </div>
+</div>
+
+<br>
+
+<h6>Check what would you like to do today</h6>
+
+<br>
+
+<div id="checkboxes">
+    <ul class="box">
+      <span><input name="categories" id="cb1" type="checkbox" /></span>
+      <label for="cb1">Restaurants</label>
+    </ul>
+    <ul class="box">
+      <span><input name="categories" id="cb2" type="checkbox" /></span>
+      <label for="cb2">Bars</label>
+    </ul>
+    <ul class="box">
+      <span><input name="categories" id="cb2" type="checkbox" /></span>
+      <label for="cb3">Nightlife</label>
+    </ul>
+    <ul class="box">
+      <span><input name="categories" id="cb4" type="checkbox" /></span>
+      <label for="cb4">Events</label>
+    </ul>
+</div>
+
+<br>
+
+<div id="container">
+
+  <div id="firstbox">
+    <h3 id="eventheader">Places and events in your area:</h3>
+      <ul>
+        <li id="events_area"></li>
+      </ul>
+  </div>
+
+  <div id="secondbox">
+    <h3 id="youreventheader"> Your places and events:</h3>
+      <ul>
+        <li id="events_saved"></li>
+      </ul>
+  </div>
+
+</div>
+
+<script>
+// function showContainer() {
+//     let x = document.getElementById("container");
+//      if (x.style.display === "none") {
+//         x.style.display = "block";
+//       } else {
+//         x.style.display = "none";
+//       }
+// }
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script>
+  $(document).ready(function(){
+    $('#submit_button').on('click', function(){
+      $('#container, #checkboxes').fadeIn(1200);
+    });
+  })
+</script>
+<!-- <script src="index.js"></script> -->
+</body>
+</html>
