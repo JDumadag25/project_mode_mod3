@@ -3,6 +3,7 @@ class Api::V1::BarsController < ApplicationController
     @bars = Bar.all
     render json: @bars
   end
+
   def update
     @bar.update(bar_params)
  if @bar.save
@@ -12,7 +13,12 @@ class Api::V1::BarsController < ApplicationController
  end
 end
 
+def handleFetch(string)
+
+end
+
  private
+
 def bar_params
  params.permit(:name, :zip_code, :address)
 end
