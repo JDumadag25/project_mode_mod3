@@ -3,7 +3,7 @@ class Api::V1::EventsController < ApplicationController
   require "http"
   require "optparse"
 
-  API_KEY =  "apZZBw6ccgvvF4nG3wKtgxumzfTrKlu9v6mM0duku5Fdd3j8sFtHYB4GICPocL3yUUXwkAOAHaBvYJSYIuGVBcZMbgf5N0b1vcTnBEubtomJT1Ogb9Ds4s0Nm4_wWnYx"
+  API_KEY =  ""
 
   API_HOST = "https://api.yelp.com"
   SEARCH_PATH = "/v3/businesses/search"
