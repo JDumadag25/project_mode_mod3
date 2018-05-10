@@ -546,3 +546,332 @@ Processing by Api::V1::UsersController#index as HTML
 Completed 200 OK in 138ms (Views: 72.9ms | ActiveRecord: 35.0ms)
 
 
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-05-09 14:23:38 -0400
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UsersController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 55ms (Views: 22.0ms | ActiveRecord: 10.2ms)
+
+
+Started GET "/api/v1/bars" for 127.0.0.1 at 2018-05-09 14:23:42 -0400
+Processing by Api::V1::BarsController#index as HTML
+  [1m[36mBar Load (1.0ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+Completed 200 OK in 135ms (Views: 24.5ms | ActiveRecord: 26.8ms)
+
+
+Started GET "/api/v1/events" for 127.0.0.1 at 2018-05-09 14:26:23 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (41.9ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+Completed 200 OK in 71ms (Views: 11.9ms | ActiveRecord: 47.8ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-05-09 14:53:45 -0400
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/login"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-05-09 14:53:48 -0400
+Processing by Api::V1::UsersController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 94ms (Views: 39.3ms | ActiveRecord: 42.4ms)
+
+
+Started GET "/api/v1/events" for 127.0.0.1 at 2018-05-09 14:53:54 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+Completed 200 OK in 32ms (Views: 14.4ms | ActiveRecord: 10.8ms)
+
+
+Started GET "/api/v1/bars" for 127.0.0.1 at 2018-05-09 14:56:38 -0400
+Processing by Api::V1::BarsController#index as */*
+  [1m[36mBar Load (50.0ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+Completed 200 OK in 87ms (Views: 16.7ms | ActiveRecord: 65.4ms)
+
+
+Started GET "/api/v1/bars" for 127.0.0.1 at 2018-05-09 14:59:04 -0400
+Processing by Api::V1::BarsController#index as */*
+  [1m[36mBar Load (0.6ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/bars" for 127.0.0.1 at 2018-05-09 14:59:06 -0400
+Processing by Api::V1::BarsController#index as */*
+  [1m[36mBar Load (22.6ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+Completed 200 OK in 25ms (Views: 2.2ms | ActiveRecord: 22.6ms)
+
+
+Started GET "/api/v1/bars" for 127.0.0.1 at 2018-05-09 14:59:20 -0400
+Processing by Api::V1::BarsController#index as */*
+  [1m[36mBar Load (6.1ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+Completed 200 OK in 12ms (Views: 5.7ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/api/v1/bars" for 127.0.0.1 at 2018-05-09 15:01:32 -0400
+Processing by Api::V1::BarsController#index as */*
+  [1m[36mBar Load (1.5ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/v1/events" for 127.0.0.1 at 2018-05-09 15:07:42 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/events" for 127.0.0.1 at 2018-05-09 15:07:45 -0400
+Processing by Api::V1::EventsController#index as */*
+  [1m[36mEvent Load (2.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+Completed 200 OK in 9ms (Views: 6.9ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/api/v1/bars" for 127.0.0.1 at 2018-05-09 15:10:10 -0400
+Processing by Api::V1::BarsController#index as HTML
+  [1m[36mBar Load (0.4ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/bars" for 127.0.0.1 at 2018-05-09 15:10:37 -0400
+Processing by Api::V1::BarsController#index as */*
+  [1m[36mBar Load (0.6ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/bars" for 127.0.0.1 at 2018-05-09 15:13:54 -0400
+Processing by Api::V1::BarsController#index as */*
+  [1m[36mBar Load (14.9ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+Completed 200 OK in 48ms (Views: 32.5ms | ActiveRecord: 14.9ms)
+
+
+Started GET "/api/v1/bars" for 127.0.0.1 at 2018-05-09 15:19:11 -0400
+Processing by Api::V1::BarsController#index as */*
+  [1m[36mBar Load (5.3ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+Completed 200 OK in 80ms (Views: 74.0ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/api/v1/bars" for 127.0.0.1 at 2018-05-09 15:21:24 -0400
+Processing by Api::V1::BarsController#index as */*
+  [1m[36mBar Load (0.4ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/bars" for 127.0.0.1 at 2018-05-09 15:21:26 -0400
+Processing by Api::V1::BarsController#index as */*
+  [1m[36mBar Load (3.1ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+Completed 200 OK in 51ms (Views: 47.1ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/api/v1/bars" for 127.0.0.1 at 2018-05-09 15:22:24 -0400
+Processing by Api::V1::BarsController#index as */*
+  [1m[36mBar Load (1.0ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+Completed 200 OK in 13ms (Views: 11.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/v1/bars" for 127.0.0.1 at 2018-05-09 15:22:26 -0400
+Processing by Api::V1::BarsController#index as */*
+  [1m[36mBar Load (0.8ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/bars" for 127.0.0.1 at 2018-05-09 15:24:35 -0400
+Processing by Api::V1::BarsController#index as */*
+  [1m[36mBar Load (0.6ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+Completed 200 OK in 55ms (Views: 54.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/bars" for 127.0.0.1 at 2018-05-09 15:24:37 -0400
+Processing by Api::V1::BarsController#index as */*
+  [1m[36mBar Load (0.6ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+Completed 200 OK in 61ms (Views: 60.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/bars" for 127.0.0.1 at 2018-05-09 15:27:38 -0400
+Processing by Api::V1::BarsController#index as */*
+  [1m[36mBar Load (0.9ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+Completed 200 OK in 61ms (Views: 59.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/v1/bars" for 127.0.0.1 at 2018-05-09 15:27:40 -0400
+Processing by Api::V1::BarsController#index as */*
+  [1m[36mBar Load (0.9ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/v1/bars" for 127.0.0.1 at 2018-05-09 15:32:17 -0400
+Processing by Api::V1::BarsController#index as */*
+  [1m[36mBar Load (0.4ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/bars" for 127.0.0.1 at 2018-05-09 15:32:19 -0400
+Processing by Api::V1::BarsController#index as */*
+  [1m[36mBar Load (0.9ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/v1/bars" for 127.0.0.1 at 2018-05-09 15:33:00 -0400
+Processing by Api::V1::BarsController#index as */*
+  [1m[36mBar Load (0.5ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/bars" for 127.0.0.1 at 2018-05-09 15:36:01 -0400
+Processing by Api::V1::BarsController#index as */*
+  [1m[36mBar Load (0.6ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+Completed 200 OK in 55ms (Views: 53.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/bars" for 127.0.0.1 at 2018-05-09 15:36:53 -0400
+Processing by Api::V1::BarsController#index as */*
+  [1m[36mBar Load (1.4ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/v1/bars" for 127.0.0.1 at 2018-05-09 15:37:27 -0400
+Processing by Api::V1::BarsController#index as */*
+  [1m[36mBar Load (2.0ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+Completed 200 OK in 19ms (Views: 17.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/api/v1/bars" for 127.0.0.1 at 2018-05-09 15:39:49 -0400
+Processing by Api::V1::BarsController#index as */*
+  [1m[36mBar Load (0.4ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/bars" for 127.0.0.1 at 2018-05-09 15:40:32 -0400
+Processing by Api::V1::BarsController#index as */*
+  [1m[36mBar Load (0.6ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/bars" for 127.0.0.1 at 2018-05-09 15:40:59 -0400
+Processing by Api::V1::BarsController#index as */*
+  [1m[36mBar Load (0.8ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+Completed 200 OK in 76ms (Views: 74.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/bars" for 127.0.0.1 at 2018-05-09 15:41:02 -0400
+Processing by Api::V1::BarsController#index as */*
+  [1m[36mBar Load (0.7ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/bars" for 127.0.0.1 at 2018-05-09 15:41:52 -0400
+Processing by Api::V1::BarsController#index as */*
+  [1m[36mBar Load (1.4ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/v1/bars" for 127.0.0.1 at 2018-05-09 15:41:54 -0400
+Processing by Api::V1::BarsController#index as */*
+  [1m[36mBar Load (1.8ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+Completed 200 OK in 33ms (Views: 30.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/api/v1/bars" for 127.0.0.1 at 2018-05-09 15:42:34 -0400
+Processing by Api::V1::BarsController#index as */*
+  [1m[36mBar Load (0.7ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/bars" for 127.0.0.1 at 2018-05-09 15:45:13 -0400
+Processing by Api::V1::BarsController#index as */*
+  [1m[36mBar Load (2.0ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+Completed 200 OK in 5ms (Views: 2.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/api/v1/bars" for 127.0.0.1 at 2018-05-09 15:47:41 -0400
+  [1m[35m (55.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::BarsController#index as */*
+  [1m[36mBar Load (1.0ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+Completed 200 OK in 74ms (Views: 15.5ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/api/v1/bars" for 127.0.0.1 at 2018-05-09 15:48:54 -0400
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::BarsController#index as */*
+  [1m[36mBar Load (1.0ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+Completed 200 OK in 55ms (Views: 15.4ms | ActiveRecord: 10.8ms)
+
+
+Started GET "/api/v1/events" for 127.0.0.1 at 2018-05-09 16:22:44 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+Completed 200 OK in 138ms (Views: 33.4ms | ActiveRecord: 58.3ms)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-05-09 16:22:59 -0400
+Processing by Api::V1::UsersController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 148ms (Views: 16.2ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/api/v1/bars" for 127.0.0.1 at 2018-05-09 16:32:13 -0400
+Processing by Api::V1::BarsController#index as */*
+  [1m[36mBar Load (5.6ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+Completed 200 OK in 50ms (Views: 42.4ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/api/v1/bars" for 127.0.0.1 at 2018-05-09 16:33:07 -0400
+Processing by Api::V1::BarsController#index as */*
+  [1m[36mBar Load (0.7ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+Completed 200 OK in 46ms (Views: 45.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/bars" for 127.0.0.1 at 2018-05-09 16:34:20 -0400
+Processing by Api::V1::BarsController#index as */*
+  [1m[36mBar Load (1.4ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/v1/bars" for 127.0.0.1 at 2018-05-09 16:40:22 -0400
+Processing by Api::V1::BarsController#index as */*
+  [1m[36mBar Load (0.6ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+Completed 200 OK in 30ms (Views: 28.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-05-09 18:21:10 -0400
+Processing by Api::V1::UsersController#index as HTML
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 26ms (Views: 15.8ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/api/v1/bars" for 127.0.0.1 at 2018-05-09 18:23:00 -0400
+Processing by Api::V1::BarsController#index as */*
+  [1m[36mBar Load (1.0ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+Completed 200 OK in 43ms (Views: 34.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-05-10 09:39:47 -0400
+Processing by Api::V1::UsersController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 8ms (Views: 6.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/v1/bars" for 127.0.0.1 at 2018-05-10 09:41:39 -0400
+Processing by Api::V1::BarsController#index as */*
+  [1m[36mBar Load (1.0ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 1.0ms)
+
+
