@@ -50,12 +50,22 @@ p {
     color: black;
 }
 
-#checkboxes{
+#radiobutton{
   text-align: center;
   background: rgba(255,255,255,0.5);
   display: none;
-
 }
+
+#radiochoice {
+  display: inline-flex;
+  padding: 15px
+}
+
+input[type=radio] {
+   margin-left: 50px;
+   
+}
+
 
 .box {
   display: inline-block;
@@ -128,8 +138,13 @@ p {
 
 <br>
 
-<div id="checkboxes">
-    <ul class="box">
+<div id="radiobutton">
+  <form id="radiochoice">
+    <input type="radio" name="event" value="restaurants" checked="checked"> Restaurants<br>
+    <input type="radio" name="event" value="bars"> Bars<br>
+    <input type="radio" name="event" value="music-venues"> Music Venues
+  </form>
+    <!-- <ul class="box">
       <span><input name="categories" id="cb1" type="checkbox" /></span>
       <label for="cb1">Restaurants</label>
     </ul>
@@ -139,12 +154,8 @@ p {
     </ul>
     <ul class="box">
       <span><input name="categories" id="cb2" type="checkbox" /></span>
-      <label for="cb3">Nightlife</label>
-    </ul>
-    <ul class="box">
-      <span><input name="categories" id="cb4" type="checkbox" /></span>
-      <label for="cb4">Events</label>
-    </ul>
+      <label for="cb3">Music</label>
+    </ul> -->
 </div>
 
 <br>
@@ -183,10 +194,10 @@ p {
 <script>
   $(document).ready(function(){
     $('#submit_button').on('click', function(){
-      $('#container, #checkboxes').fadeIn(1200);
+      $('#container, #radiobutton').fadeIn(1200);
     });
   })
 </script>
-<!-- <script src="index.js"></script> -->
+<script src="src/index.js"></script>
 </body>
 </html>
