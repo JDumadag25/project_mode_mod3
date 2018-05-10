@@ -546,3 +546,1238 @@ Processing by Api::V1::UsersController#index as HTML
 Completed 200 OK in 138ms (Views: 72.9ms | ActiveRecord: 35.0ms)
 
 
+Started GET "/api/v1/bars" for 127.0.0.1 at 2018-05-10 10:18:33 -0400
+  
+ActiveRecord::NoDatabaseError (FATAL:  database "projectmod3_development" does not exist
+):
+  
+activerecord (5.1.6) lib/active_record/connection_adapters/postgresql_adapter.rb:701:in `rescue in connect'
+activerecord (5.1.6) lib/active_record/connection_adapters/postgresql_adapter.rb:697:in `connect'
+activerecord (5.1.6) lib/active_record/connection_adapters/postgresql_adapter.rb:221:in `initialize'
+activerecord (5.1.6) lib/active_record/connection_adapters/postgresql_adapter.rb:38:in `new'
+activerecord (5.1.6) lib/active_record/connection_adapters/postgresql_adapter.rb:38:in `postgresql_connection'
+activerecord (5.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:759:in `new_connection'
+activerecord (5.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:803:in `checkout_new_connection'
+activerecord (5.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:782:in `try_to_checkout_new_connection'
+activerecord (5.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:743:in `acquire_connection'
+activerecord (5.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:500:in `checkout'
+activerecord (5.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:374:in `connection'
+activerecord (5.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:931:in `retrieve_connection'
+activerecord (5.1.6) lib/active_record/connection_handling.rb:116:in `retrieve_connection'
+activerecord (5.1.6) lib/active_record/connection_handling.rb:88:in `connection'
+activerecord (5.1.6) lib/active_record/migration.rb:562:in `connection'
+activerecord (5.1.6) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[35m (115.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (35.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (7.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2396560807482568125)[0m
+  [1m[35m (4.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (1)
+  [1m[35m (18.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (41.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "first_name" character varying, "last_name" character varying, "age" integer, "email" character varying, "address" character varying, "zip_code" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (8.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "1"]]
+  [1m[35m (4.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateBars (2)
+  [1m[35m (16.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (19.0ms)[0m  [1m[35mCREATE TABLE "bars" ("id" bigserial primary key, "name" character varying, "zip_code" integer, "address" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "2"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateEvents (3)
+  [1m[35m (6.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (28.8ms)[0m  [1m[35mCREATE TABLE "events" ("id" bigserial primary key, "name" character varying, "zip_code" integer, "address" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "3"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (9.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (20.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-05-10 14:19:11.432502"], ["updated_at", "2018-05-10 14:19:11.432502"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(2396560807482568125)[0m
+  [1m[35m (6.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (6.7ms)[0m  [1m[32mINSERT INTO "bars" ("name", "zip_code", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Justin's Booze House"], ["zip_code", 10004], ["address", "111 test st. New York, NY"], ["created_at", "2018-05-10 14:19:23.038182"], ["updated_at", "2018-05-10 14:19:23.038182"]]
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "bars" ("name", "zip_code", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Frank's"], ["zip_code", 10023], ["address", "222 testy test st. New York, NY"], ["created_at", "2018-05-10 14:19:23.051126"], ["updated_at", "2018-05-10 14:19:23.051126"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (7.5ms)[0m  [1m[32mINSERT INTO "events" ("name", "zip_code", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Skate or Die"], ["zip_code", 10023], ["address", "333 event st. New York, NY"], ["created_at", "2018-05-10 14:19:23.079392"], ["updated_at", "2018-05-10 14:19:23.079392"]]
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "events" ("name", "zip_code", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Books are Cool"], ["zip_code", 10004], ["address", "444 event st. New York, NY"], ["created_at", "2018-05-10 14:19:23.092613"], ["updated_at", "2018-05-10 14:19:23.092613"]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (4.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "age", "email", "address", "zip_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["first_name", "George"], ["last_name", "Userton"], ["age", 45], ["email", "guserton@cherrytree.com"], ["address", "555 Delaware st. New York, NY"], ["zip_code", 10004], ["created_at", "2018-05-10 14:19:23.132210"], ["updated_at", "2018-05-10 14:19:23.132210"]]
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "age", "email", "address", "zip_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["first_name", "Mallory"], ["last_name", "Keyboard"], ["age", 21], ["email", "mallory@keyboard.com"], ["address", "666 Hell st. New York, NY"], ["zip_code", 10023], ["created_at", "2018-05-10 14:19:23.141985"], ["updated_at", "2018-05-10 14:19:23.141985"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/api/v1/bars" for 127.0.0.1 at 2018-05-10 10:19:39 -0400
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::BarsController#index as HTML
+  [1m[36mBar Load (6.6ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+Completed 200 OK in 57ms (Views: 18.8ms | ActiveRecord: 17.9ms)
+
+
+Started OPTIONS "/api/v1/bars" for 127.0.0.1 at 2018-05-10 10:38:51 -0400
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/v1/bars"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started OPTIONS "/api/v1/bars" for 127.0.0.1 at 2018-05-10 10:39:16 -0400
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/v1/bars"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started OPTIONS "/api/v1/bars" for 127.0.0.1 at 2018-05-10 10:44:29 -0400
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/v1/bars"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started OPTIONS "/api/v1/bars" for 127.0.0.1 at 2018-05-10 10:44:36 -0400
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/v1/bars"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started OPTIONS "/api/v1/bars" for 127.0.0.1 at 2018-05-10 10:44:53 -0400
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/v1/bars"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started OPTIONS "/api/v1/bars" for 127.0.0.1 at 2018-05-10 10:45:56 -0400
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/v1/bars"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started OPTIONS "/api/v1/bars" for 127.0.0.1 at 2018-05-10 10:51:50 -0400
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/v1/bars"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/api/v1/bars" for 127.0.0.1 at 2018-05-10 10:53:26 -0400
+Started POST "/api/v1/bars" for 127.0.0.1 at 2018-05-10 10:53:26 -0400
+  [1m[35m (7.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (7.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/frankmcmanus/Development/JavascriptFlatiron/project_mode_mod3/backend/app/controllers/api/v1/bars_controller.rb:59: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/api/v1/bars_controller.rb:59: syntax error, unexpected keyword_end, expecting end-of-input
+  
+SyntaxError (/Users/frankmcmanus/Development/JavascriptFlatiron/project_mode_mod3/backend/app/controllers/api/v1/bars_controller.rb:59: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/api/v1/bars_controller.rb:59: syntax error, unexpected keyword_end, expecting end-of-input
+Started POST "/api/v1/bars" for 127.0.0.1 at 2018-05-10 10:54:24 -0400
+Started POST "/api/v1/bars" for 127.0.0.1 at 2018-05-10 10:54:35 -0400
+Processing by Api::V1::BarsController#create as */*
+  Parameters: {"zip_code"=>"11111", "bar"=>{"zip_code"=>"11111"}}
+Unpermitted parameter: :bar
+  [1m[35m (3.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (61.1ms)[0m  [1m[32mINSERT INTO "bars" ("zip_code", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["zip_code", 11111], ["created_at", "2018-05-10 14:54:35.645851"], ["updated_at", "2018-05-10 14:54:35.645851"]]
+  [1m[35m (27.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 141ms (Views: 1.0ms | ActiveRecord: 154.5ms)
+
+
+Processing by Api::V1::BarsController#create as */*
+  Parameters: {"zip_code"=>"11111", "bar"=>{"zip_code"=>"11111"}}
+Unpermitted parameter: :bar
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "bars" ("zip_code", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["zip_code", 11111], ["created_at", "2018-05-10 14:54:35.846998"], ["updated_at", "2018-05-10 14:54:35.846998"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 37ms (Views: 0.7ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/api/v1/bars" for 127.0.0.1 at 2018-05-10 10:58:20 -0400
+  [1m[35m (7.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::BarsController#index as HTML
+  [1m[36mBar Load (25.9ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+Completed 200 OK in 110ms (Views: 22.6ms | ActiveRecord: 67.5ms)
+
+
+Started POST "/api/v1/bars" for 127.0.0.1 at 2018-05-10 10:59:10 -0400
+Started POST "/api/v1/bars" for 127.0.0.1 at 2018-05-10 10:59:21 -0400
+Processing by Api::V1::BarsController#create as */*
+  Parameters: {"zip_code"=>"11111", "bar"=>{"zip_code"=>"11111"}}
+Unpermitted parameter: :bar
+Completed 204 No Content in 8ms (ActiveRecord: 0.0ms)
+
+
+Processing by Api::V1::BarsController#create as */*
+  Parameters: {"zip_code"=>"11111", "bar"=>{"zip_code"=>"11111"}}
+Unpermitted parameter: :bar
+Completed 204 No Content in 2ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/bars" for 127.0.0.1 at 2018-05-10 10:59:28 -0400
+Processing by Api::V1::BarsController#create as */*
+  Parameters: {"zip_code"=>"11111", "bar"=>{"zip_code"=>"11111"}}
+Unpermitted parameter: :bar
+Unpermitted parameter: :bar
+  [1m[35m (3.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (49.6ms)[0m  [1m[32mINSERT INTO "bars" ("zip_code", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["zip_code", 11111], ["created_at", "2018-05-10 14:59:28.885729"], ["updated_at", "2018-05-10 14:59:28.885729"]]
+  [1m[35m (8.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 89ms (Views: 1.4ms | ActiveRecord: 61.5ms)
+
+
+Started GET "/api/v1/bars" for 127.0.0.1 at 2018-05-10 10:59:38 -0400
+Processing by Api::V1::BarsController#index as HTML
+  [1m[36mBar Load (1.9ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+Completed 200 OK in 7ms (Views: 4.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/api/v1/bars" for 127.0.0.1 at 2018-05-10 11:00:44 -0400
+  [1m[35m (9.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::BarsController#index as HTML
+  [1m[36mBar Load (1.2ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+Completed 200 OK in 90ms (Views: 32.1ms | ActiveRecord: 24.3ms)
+
+
+Started GET "/api/v1/bars" for 127.0.0.1 at 2018-05-10 11:03:03 -0400
+Processing by Api::V1::BarsController#index as HTML
+  [1m[36mBar Load (1.1ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+Completed 200 OK in 106ms (Views: 67.2ms | ActiveRecord: 23.2ms)
+
+
+Started POST "/api/v1/bars" for 127.0.0.1 at 2018-05-10 11:03:14 -0400
+Processing by Api::V1::BarsController#create as */*
+  Parameters: {"zip_code"=>"11111", "bar"=>{"zip_code"=>"11111"}}
+Unpermitted parameter: :bar
+Unpermitted parameter: :bar
+  [1m[35m (13.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (11.7ms)[0m  [1m[32mINSERT INTO "bars" ("zip_code", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["zip_code", 11111], ["created_at", "2018-05-10 15:03:14.607125"], ["updated_at", "2018-05-10 15:03:14.607125"]]
+  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 65ms (Views: 7.5ms | ActiveRecord: 29.1ms)
+
+
+Started POST "/api/v1/bars" for 127.0.0.1 at 2018-05-10 11:03:32 -0400
+Processing by Api::V1::BarsController#create as */*
+  Parameters: {"zip_code"=>"11111", "bar"=>{"zip_code"=>"11111"}}
+Unpermitted parameter: :bar
+Completed 204 No Content in 7ms (ActiveRecord: 7.5ms)
+
+
+Started POST "/api/v1/bars" for 127.0.0.1 at 2018-05-10 11:06:37 -0400
+Processing by Api::V1::BarsController#create as */*
+  Parameters: {"zip_code"=>"11111", "bar"=>{"zip_code"=>"11111"}}
+Unpermitted parameter: :bar
+Completed 204 No Content in 2ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/bars" for 127.0.0.1 at 2018-05-10 11:23:36 -0400
+Processing by Api::V1::BarsController#create as */*
+  Parameters: {"zip_code"=>"11111", "bar"=>{"zip_code"=>"11111"}}
+Unpermitted parameter: :bar
+Completed 204 No Content in 1027ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/bars" for 127.0.0.1 at 2018-05-10 11:24:01 -0400
+Processing by Api::V1::BarsController#index as HTML
+  [1m[36mBar Load (22.8ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+Completed 200 OK in 108ms (Views: 23.9ms | ActiveRecord: 82.9ms)
+
+
+Started POST "/api/v1/bars" for 127.0.0.1 at 2018-05-10 11:24:52 -0400
+Processing by Api::V1::BarsController#create as */*
+  Parameters: {"zip_code"=>"10004", "bar"=>{"zip_code"=>"10004"}}
+Unpermitted parameter: :bar
+Completed 204 No Content in 611ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/bars" for 127.0.0.1 at 2018-05-10 11:25:01 -0400
+Processing by Api::V1::BarsController#create as */*
+  Parameters: {"zip_code"=>"10004", "bar"=>{"zip_code"=>"10004"}}
+Unpermitted parameter: :bar
+Completed 204 No Content in 1073ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/events" for 127.0.0.1 at 2018-05-10 11:36:26 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (18.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+Completed 200 OK in 91ms (Views: 36.9ms | ActiveRecord: 30.3ms)
+
+
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-05-10 11:44:15 -0400
+  [1m[35m (10.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [POST] "/api/v1/events"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-05-10 11:45:01 -0400
+  [1m[35m (9.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"zip_code"=>"10004", "event"=>{"zip_code"=>"10004"}}
+Completed 500 Internal Server Error in 128ms (ActiveRecord: 6.4ms)
+
+
+  
+NameError (undefined local variable or method `bar_params' for #<Api::V1::EventsController:0x007fce4b374300>):
+  
+app/controllers/api/v1/events_controller.rb:32:in `create'
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-05-10 11:46:18 -0400
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-05-10 11:46:18 -0400
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (299.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-05-10 11:59:33 -0400
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-05-10 11:59:33 -0400
+  [1m[35m (8.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (9.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"zip_code"=>"10004", "event"=>{"zip_code"=>"10004"}}
+Unpermitted parameter: :event
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"zip_code"=>"10004", "event"=>{"zip_code"=>"10004"}}
+Unpermitted parameter: :event
+Completed 204 No Content in 722ms (ActiveRecord: 34.8ms)
+
+
+Completed 204 No Content in 1032ms (ActiveRecord: 0.0ms)
+
+
+  [1m[35m (11.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2396560807482568125)[0m
+  [1m[35m (5.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddTitleToEvents (4)
+  [1m[35m (6.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (99.2ms)[0m  [1m[35mALTER TABLE "events" ADD "title" character varying[0m
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "events" ADD "price" character varying[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "events" ADD "integer" character varying[0m
+  [1m[35mSQL (25.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "4"]]
+  [1m[35m (22.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (32.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(2396560807482568125)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (9.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2396560807482568125)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddTitleToEvents (4)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (62.6ms)[0m  [1m[35mALTER TABLE "events" DROP "integer"[0m
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "events" DROP "price"[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "events" DROP "title"[0m
+  [1m[35mSQL (3.4ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "4"]]
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(2396560807482568125)[0m
+  [1m[35m (5.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2396560807482568125)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateEvents (3)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (67.6ms)[0m  [1m[35mDROP TABLE "events"[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "3"]]
+  [1m[35m (40.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateBars (2)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (25.9ms)[0m  [1m[35mDROP TABLE "bars"[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "2"]]
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(2396560807482568125)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2396560807482568125)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateBars (2)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (338.8ms)[0m  [1m[35mCREATE TABLE "bars" ("id" bigserial primary key, "name" character varying, "zip_code" integer, "address" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "2"]]
+  [1m[35m (6.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateEvents (3)
+  [1m[35m (6.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (31.4ms)[0m  [1m[35mCREATE TABLE "events" ("id" bigserial primary key, "name" character varying, "zip_code" integer, "address" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (3.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "3"]]
+  [1m[35m (7.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddTitleToEvents (4)
+  [1m[35m (6.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "events" ADD "title" character varying[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "events" ADD "price" character varying[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "4"]]
+  [1m[35m (9.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(2396560807482568125)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-05-10 12:55:33 -0400
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"zip_code"=>"10004", "event"=>{"zip_code"=>"10004"}}
+Unpermitted parameter: :event
+Completed 204 No Content in 1192ms (ActiveRecord: 7.3ms)
+
+
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-05-10 12:57:58 -0400
+  [1m[35m (9.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"zip_code"=>"10004", "event"=>{"zip_code"=>"10004"}}
+Unpermitted parameter: :event
+Completed 204 No Content in 573ms (ActiveRecord: 3.8ms)
+
+
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-05-10 13:00:14 -0400
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"zip_code"=>"10004", "event"=>{"zip_code"=>"10004"}}
+Unpermitted parameter: :event
+Completed 204 No Content in 829ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-05-10 13:03:33 -0400
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"zip_code"=>"10023", "event"=>{"zip_code"=>"10023"}}
+Unpermitted parameter: :event
+Completed 204 No Content in 1021ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-05-10 13:04:33 -0400
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"zip_code"=>"10023", "event"=>{"zip_code"=>"10023"}}
+Unpermitted parameter: :event
+Completed 204 No Content in 695ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-05-10 13:05:03 -0400
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"zip_code"=>"10023", "event"=>{"zip_code"=>"10023"}}
+Unpermitted parameter: :event
+Completed 500 Internal Server Error in 556ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `businesses' for #<HTTP::Response:0x007f80c1cfb018>):
+  
+app/controllers/api/v1/events_controller.rb:44:in `create'
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-05-10 13:07:44 -0400
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"zip_code"=>"10023", "event"=>{"zip_code"=>"10023"}}
+Unpermitted parameter: :event
+Completed 204 No Content in 752ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-05-10 13:12:05 -0400
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"zip_code"=>"10023", "event"=>{"zip_code"=>"10023"}}
+Unpermitted parameter: :event
+Completed 204 No Content in 649ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-05-10 13:12:19 -0400
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"zip_code"=>"10023", "event"=>{"zip_code"=>"10023"}}
+Unpermitted parameter: :event
+Completed 204 No Content in 627ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-05-10 13:13:37 -0400
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"zip_code"=>"10023", "event"=>{"zip_code"=>"10023"}}
+Unpermitted parameter: :event
+Completed 204 No Content in 1299ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-05-10 13:13:46 -0400
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"zip_code"=>"10023", "event"=>{"zip_code"=>"10023"}}
+Unpermitted parameter: :event
+Completed 204 No Content in 1318ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-05-10 13:14:17 -0400
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"zip_code"=>"10023", "event"=>{"zip_code"=>"10023"}}
+Unpermitted parameter: :event
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-05-10 13:26:04 -0400
+Completed 500 Internal Server Error in 707207ms (ActiveRecord: 0.0ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/api/v1/events_controller.rb:52:in `create'
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"zip_code"=>"10023", "event"=>{"zip_code"=>"10023"}}
+Completed 500 Internal Server Error in 471ms (ActiveRecord: 0.0ms)
+
+
+  
+TypeError (no implicit conversion of String into Integer):
+  
+app/controllers/api/v1/events_controller.rb:47:in `[]'
+app/controllers/api/v1/events_controller.rb:47:in `block in create'
+app/controllers/api/v1/events_controller.rb:46:in `each'
+app/controllers/api/v1/events_controller.rb:46:in `map'
+app/controllers/api/v1/events_controller.rb:46:in `create'
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-05-10 13:26:26 -0400
+  [1m[35m (9.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"zip_code"=>"10023", "event"=>{"zip_code"=>"10023"}}
+Completed 500 Internal Server Error in 445ms (ActiveRecord: 8.9ms)
+
+
+  
+TypeError (no implicit conversion of String into Integer):
+  
+app/controllers/api/v1/events_controller.rb:47:in `[]'
+app/controllers/api/v1/events_controller.rb:47:in `block in create'
+app/controllers/api/v1/events_controller.rb:46:in `each'
+app/controllers/api/v1/events_controller.rb:46:in `map'
+app/controllers/api/v1/events_controller.rb:46:in `create'
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-05-10 13:26:46 -0400
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-05-10 13:26:56 -0400
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-05-10 13:26:56 -0400
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-05-10 13:26:56 -0400
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"zip_code"=>"10023", "event"=>{"zip_code"=>"10023"}}
+Completed 204 No Content in 497ms (ActiveRecord: 0.0ms)
+
+
+Processing by Api::V1::EventsController#create as */*
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"zip_code"=>"10023", "event"=>{"zip_code"=>"10023"}}
+  Parameters: {"zip_code"=>"10023", "event"=>{"zip_code"=>"10023"}}
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"zip_code"=>"10023", "event"=>{"zip_code"=>"10023"}}
+Completed 204 No Content in 369ms (ActiveRecord: 0.0ms)
+
+
+Completed 204 No Content in 375ms (ActiveRecord: 0.0ms)
+
+
+Completed 204 No Content in 445ms (ActiveRecord: 9.4ms)
+
+
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-05-10 13:27:40 -0400
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"zip_code"=>"10023", "event"=>{"zip_code"=>"10023"}}
+Unpermitted parameter: :event
+Completed 204 No Content in 585ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-05-10 13:29:25 -0400
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"zip_code"=>"10004", "event"=>{"zip_code"=>"10004"}}
+Completed 204 No Content in 620ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-05-10 13:31:06 -0400
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"zip_code"=>"10004", "event"=>{"zip_code"=>"10004"}}
+Completed 204 No Content in 507ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-05-10 13:32:27 -0400
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"zip_code"=>"10004", "event"=>{"zip_code"=>"10004"}}
+Completed 204 No Content in 738ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-05-10 14:00:40 -0400
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"zip_code"=>"10004", "event"=>{"zip_code"=>"10004"}}
+Completed 204 No Content in 642ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-05-10 14:01:12 -0400
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"zip_code"=>"10004", "event"=>{"zip_code"=>"10004"}}
+Completed 204 No Content in 474ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-05-10 14:01:49 -0400
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"zip_code"=>"10004", "event"=>{"zip_code"=>"10004"}}
+Completed 204 No Content in 727ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-05-10 14:06:31 -0400
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"zip_code"=>"10004", "event"=>{"zip_code"=>"10004"}}
+Completed 204 No Content in 619ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-05-10 14:07:59 -0400
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"zip_code"=>"10004", "event"=>{"zip_code"=>"10004"}}
+Completed 204 No Content in 591ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-05-10 14:09:24 -0400
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"zip_code"=>"10004", "event"=>{"zip_code"=>"10004"}}
+Completed 500 Internal Server Error in 746ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 5, expected 0..1)):
+  
+app/controllers/api/v1/events_controller.rb:53:in `block in create'
+app/controllers/api/v1/events_controller.rb:46:in `each'
+app/controllers/api/v1/events_controller.rb:46:in `create'
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-05-10 14:11:26 -0400
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"zip_code"=>"10004", "event"=>{"zip_code"=>"10004"}}
+Completed 500 Internal Server Error in 1063ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 5, expected 0..1)):
+  
+app/controllers/api/v1/events_controller.rb:53:in `block in create'
+app/controllers/api/v1/events_controller.rb:46:in `each'
+app/controllers/api/v1/events_controller.rb:46:in `create'
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-05-10 14:12:34 -0400
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"zip_code"=>"10004", "event"=>{"zip_code"=>"10004"}}
+Completed 500 Internal Server Error in 851ms (ActiveRecord: 158.2ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'title' for Bar.):
+  
+app/controllers/api/v1/events_controller.rb:53:in `block in create'
+app/controllers/api/v1/events_controller.rb:46:in `each'
+app/controllers/api/v1/events_controller.rb:46:in `create'
+  [1m[35m (11.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2396560807482568125)[0m
+  [1m[35m (20.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddTitlePriceToBar (5)
+  [1m[35m (17.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (20.9ms)[0m  [1m[35mALTER TABLE "bars" ADD "title" character varying[0m
+  [1m[35m (7.6ms)[0m  [1m[35mALTER TABLE "bars" ADD "price" character varying[0m
+  [1m[35mSQL (16.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "5"]]
+  [1m[35m (4.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (7.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(2396560807482568125)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-05-10 14:15:52 -0400
+  [1m[35m (10.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"zip_code"=>"10004", "event"=>{"zip_code"=>"10004"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (7.0ms)[0m  [1m[32mINSERT INTO "bars" ("name", "zip_code", "address", "created_at", "updated_at", "title", "price") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "The Dead Rabbit"], ["zip_code", 10004], ["address", "30 Water St"], ["created_at", "2018-05-10 18:15:54.705119"], ["updated_at", "2018-05-10 18:15:54.705119"], ["title", "Cocktail Bars"], ["price", "$$"]]
+  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "bars" ("name", "zip_code", "address", "created_at", "updated_at", "title", "price") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "White Horse Tavern - Financial District"], ["zip_code", 10004], ["address", "25 Bridge St"], ["created_at", "2018-05-10 18:15:54.719480"], ["updated_at", "2018-05-10 18:15:54.719480"], ["title", "Pubs"], ["price", "$"]]
+  [1m[35m (8.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "bars" ("name", "zip_code", "address", "created_at", "updated_at", "title", "price") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "BlackTail"], ["zip_code", 10004], ["address", "22 Battery Pl"], ["created_at", "2018-05-10 18:15:54.731716"], ["updated_at", "2018-05-10 18:15:54.731716"], ["title", "Cuban"], ["price", "$$$"]]
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "bars" ("name", "zip_code", "address", "created_at", "updated_at", "title", "price") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "The Growler Bites & Brews"], ["zip_code", 10004], ["address", "55 Stone St"], ["created_at", "2018-05-10 18:15:54.743547"], ["updated_at", "2018-05-10 18:15:54.743547"], ["title", "Breweries"], ["price", "$$"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "bars" ("name", "zip_code", "address", "created_at", "updated_at", "title", "price") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "The Porterhouse Brewing Company"], ["zip_code", 10004], ["address", "36 Water St"], ["created_at", "2018-05-10 18:15:54.750241"], ["updated_at", "2018-05-10 18:15:54.750241"], ["title", "Breweries"], ["price", "$$"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "bars" ("name", "zip_code", "address", "created_at", "updated_at", "title", "price") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Broadstone Bar & Kitchen"], ["zip_code", 10004], ["address", "88 Broad St"], ["created_at", "2018-05-10 18:15:54.756468"], ["updated_at", "2018-05-10 18:15:54.756468"], ["title", "American (New)"], ["price", "$$"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "bars" ("name", "zip_code", "address", "created_at", "updated_at", "title", "price") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Toro Loco"], ["zip_code", 10004], ["address", "15 Stone St"], ["created_at", "2018-05-10 18:15:54.763962"], ["updated_at", "2018-05-10 18:15:54.763962"], ["title", "Cocktail Bars"], ["price", "$$"]]
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO "bars" ("name", "zip_code", "address", "created_at", "updated_at", "title", "price") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Murphy's Tavern"], ["zip_code", 10004], ["address", "6 Stone St"], ["created_at", "2018-05-10 18:15:54.773642"], ["updated_at", "2018-05-10 18:15:54.773642"], ["title", "Pubs"], ["price", "$$"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "bars" ("name", "zip_code", "address", "created_at", "updated_at", "title", "price") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Blue Bar At India House"], ["zip_code", 10004], ["address", "1 Hanover Square"], ["created_at", "2018-05-10 18:15:54.782305"], ["updated_at", "2018-05-10 18:15:54.782305"], ["title", "Lounges"], ["price", "$$"]]
+  [1m[35m (3.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "bars" ("name", "zip_code", "address", "created_at", "updated_at", "title", "price") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Clinton Hall"], ["zip_code", 10006], ["address", "90 Washington St"], ["created_at", "2018-05-10 18:15:54.789992"], ["updated_at", "2018-05-10 18:15:54.789992"], ["title", "American (New)"], ["price", "$$"]]
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 1418ms (ActiveRecord: 75.3ms)
+
+
+Started GET "/api/v1/events" for 127.0.0.1 at 2018-05-10 14:16:13 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (19.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+Completed 200 OK in 159ms (Views: 43.6ms | ActiveRecord: 114.1ms)
+
+
+Started GET "/public/" for 127.0.0.1 at 2018-05-10 14:16:18 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/public"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/v1/events" for 127.0.0.1 at 2018-05-10 14:16:31 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (3.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+Completed 200 OK in 12ms (Views: 7.3ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/api/v1/events" for 127.0.0.1 at 2018-05-10 14:16:45 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (20.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+Completed 200 OK in 26ms (Views: 5.2ms | ActiveRecord: 20.4ms)
+
+
+Started GET "/api/v1/bars" for 127.0.0.1 at 2018-05-10 14:16:59 -0400
+Processing by Api::V1::BarsController#index as HTML
+  [1m[36mBar Load (17.5ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+Completed 200 OK in 38ms (Views: 19.7ms | ActiveRecord: 17.5ms)
+
+
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2396560807482568125)[0m
+  [1m[35m (4.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateRestaurants (6)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (165.1ms)[0m  [1m[35mCREATE TABLE "restaurants" ("id" bigserial primary key, "name" character varying, "zip_code" integer, "address" character varying, "title" character varying, "price" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (3.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "6"]]
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateMusics (7)
+  [1m[35m (6.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (32.3ms)[0m  [1m[35mCREATE TABLE "musics" ("id" bigserial primary key, "name" character varying, "zip_code" integer, "address" character varying, "title" character varying, "price" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "7"]]
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(2396560807482568125)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/api/v1/bars" for 127.0.0.1 at 2018-05-10 14:32:20 -0400
+  [1m[35m (4.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::BarsController#index as HTML
+  [1m[36mBar Load (1.0ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+Completed 200 OK in 167ms (Views: 37.0ms | ActiveRecord: 91.9ms)
+
+
+Started GET "/api/v1/events" for 127.0.0.1 at 2018-05-10 14:32:37 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (4.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+Completed 200 OK in 1269ms (Views: 803.9ms | ActiveRecord: 438.5ms)
+
+
+Started GET "/api/v1/restaurants" for 127.0.0.1 at 2018-05-10 14:32:44 -0400
+  
+LoadError (Unable to autoload constant Api::V1::RestaurantsController, expected /Users/frankmcmanus/Development/JavascriptFlatiron/project_mode_mod3/backend/app/controllers/api/v1/restaurants_controller.rb to define it):
+  
+activesupport (5.1.6) lib/active_support/dependencies.rb:512:in `load_missing_constant'
+activesupport (5.1.6) lib/active_support/dependencies.rb:202:in `const_missing'
+activesupport (5.1.6) lib/active_support/inflector/methods.rb:271:in `const_get'
+activesupport (5.1.6) lib/active_support/inflector/methods.rb:271:in `block in constantize'
+activesupport (5.1.6) lib/active_support/inflector/methods.rb:267:in `each'
+activesupport (5.1.6) lib/active_support/inflector/methods.rb:267:in `inject'
+activesupport (5.1.6) lib/active_support/inflector/methods.rb:267:in `constantize'
+activesupport (5.1.6) lib/active_support/dependencies.rb:583:in `get'
+activesupport (5.1.6) lib/active_support/dependencies.rb:614:in `constantize'
+actionpack (5.1.6) lib/action_dispatch/http/request.rb:85:in `controller_class_for'
+actionpack (5.1.6) lib/action_dispatch/http/parameters.rb:99:in `binary_params_for?'
+actionpack (5.1.6) lib/action_dispatch/http/parameters.rb:90:in `set_binary_encoding'
+actionpack (5.1.6) lib/action_dispatch/http/parameters.rb:67:in `path_parameters='
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:48:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/v1/musics" for 127.0.0.1 at 2018-05-10 14:33:07 -0400
+  
+LoadError (Unable to autoload constant Api::V1::MusicsController, expected /Users/frankmcmanus/Development/JavascriptFlatiron/project_mode_mod3/backend/app/controllers/api/v1/musics_controller.rb to define it):
+  
+activesupport (5.1.6) lib/active_support/dependencies.rb:512:in `load_missing_constant'
+activesupport (5.1.6) lib/active_support/dependencies.rb:202:in `const_missing'
+activesupport (5.1.6) lib/active_support/inflector/methods.rb:271:in `const_get'
+activesupport (5.1.6) lib/active_support/inflector/methods.rb:271:in `block in constantize'
+activesupport (5.1.6) lib/active_support/inflector/methods.rb:267:in `each'
+activesupport (5.1.6) lib/active_support/inflector/methods.rb:267:in `inject'
+activesupport (5.1.6) lib/active_support/inflector/methods.rb:267:in `constantize'
+activesupport (5.1.6) lib/active_support/dependencies.rb:583:in `get'
+activesupport (5.1.6) lib/active_support/dependencies.rb:614:in `constantize'
+actionpack (5.1.6) lib/action_dispatch/http/request.rb:85:in `controller_class_for'
+actionpack (5.1.6) lib/action_dispatch/http/parameters.rb:99:in `binary_params_for?'
+actionpack (5.1.6) lib/action_dispatch/http/parameters.rb:90:in `set_binary_encoding'
+actionpack (5.1.6) lib/action_dispatch/http/parameters.rb:67:in `path_parameters='
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:48:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/v1/musics" for 127.0.0.1 at 2018-05-10 14:34:50 -0400
+  
+TypeError (superclass mismatch for class MusicsController):
+  
+app/controllers/api/v1/musics_controller.rb:1:in `<top (required)>'
+Started GET "/api/v1/musics" for 127.0.0.1 at 2018-05-10 14:35:54 -0400
+Processing by Api::V1::MusicsController#index as HTML
+  [1m[36mMusic Load (18.6ms)[0m  [1m[34mSELECT "musics".* FROM "musics"[0m
+Completed 200 OK in 52ms (Views: 6.6ms | ActiveRecord: 31.0ms)
+
+
+Started GET "/api/v1/musics" for 127.0.0.1 at 2018-05-10 14:36:01 -0400
+Processing by Api::V1::MusicsController#index as HTML
+  [1m[36mMusic Load (7.0ms)[0m  [1m[34mSELECT "musics".* FROM "musics"[0m
+Completed 200 OK in 11ms (Views: 3.3ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/api/v1/restaurants" for 127.0.0.1 at 2018-05-10 14:36:10 -0400
+Processing by Api::V1::RestaurantsController#index as HTML
+  [1m[36mRestaurant Load (6.7ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+Completed 200 OK in 45ms (Views: 23.9ms | ActiveRecord: 12.2ms)
+
+
+  [1m[35m (3.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (39.9ms)[0m  [1m[32mINSERT INTO "musics" ("name", "zip_code", "address", "title", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Test"], ["zip_code", 12345], ["address", "123 test st"], ["title", "testrun"], ["price", "$"], ["created_at", "2018-05-10 18:42:19.636507"], ["updated_at", "2018-05-10 18:42:19.636507"]]
+  [1m[35m (16.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (15.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "zip_code", "address", "title", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Test"], ["zip_code", 12345], ["address", "123 test st"], ["title", "testrun"], ["price", "$"], ["created_at", "2018-05-10 18:42:45.497372"], ["updated_at", "2018-05-10 18:42:45.497372"]]
+  [1m[35m (8.1ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/api/v1/restaurants" for 127.0.0.1 at 2018-05-10 14:43:24 -0400
+  [1m[35m (12.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::RestaurantsController#index as HTML
+  [1m[36mRestaurant Load (11.6ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+Completed 200 OK in 56ms (Views: 18.1ms | ActiveRecord: 27.6ms)
+
+
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-05-10 14:51:30 -0400
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"zip_code"=>"10004", "event"=>{"zip_code"=>"10004"}}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (7.8ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "zip_code", "address", "title", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Toro Loco"], ["zip_code", 10004], ["address", "15 Stone St"], ["title", "Cocktail Bars"], ["price", "$$"], ["created_at", "2018-05-10 18:51:41.741274"], ["updated_at", "2018-05-10 18:51:41.741274"]]
+  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "zip_code", "address", "title", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Luke's Lobster FiDi"], ["zip_code", 10004], ["address", "26 S William St"], ["title", "Seafood"], ["price", "$$"], ["created_at", "2018-05-10 18:51:41.758366"], ["updated_at", "2018-05-10 18:51:41.758366"]]
+  [1m[35m (3.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "zip_code", "address", "title", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Antica Ristorante"], ["zip_code", 10004], ["address", "8 Stone St"], ["title", "Italian"], ["price", "$$$"], ["created_at", "2018-05-10 18:51:41.766524"], ["updated_at", "2018-05-10 18:51:41.766524"]]
+  [1m[35m (8.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "zip_code", "address", "title", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "BlackTail"], ["zip_code", 10004], ["address", "22 Battery Pl"], ["title", "Cuban"], ["price", "$$$"], ["created_at", "2018-05-10 18:51:41.779576"], ["updated_at", "2018-05-10 18:51:41.779576"]]
+  [1m[35m (12.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "zip_code", "address", "title", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Suspenders"], ["zip_code", 10006], ["address", "108 Greenwich St"], ["title", "Gastropubs"], ["price", "$$"], ["created_at", "2018-05-10 18:51:41.796631"], ["updated_at", "2018-05-10 18:51:41.796631"]]
+  [1m[35m (12.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.7ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "zip_code", "address", "title", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Bao Bao Cafe"], ["zip_code", 10006], ["address", "106 Greenwich St"], ["title", "Noodles"], ["price", "$"], ["created_at", "2018-05-10 18:51:41.814539"], ["updated_at", "2018-05-10 18:51:41.814539"]]
+  [1m[35m (8.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "zip_code", "address", "title", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Naya"], ["zip_code", 10004], ["address", "One New York Plz"], ["title", "Lebanese"], ["price", "$"], ["created_at", "2018-05-10 18:51:41.830162"], ["updated_at", "2018-05-10 18:51:41.830162"]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.6ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "zip_code", "address", "title", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Long Hall At Pier A"], ["zip_code", 10004], ["address", "22 Battery Pl"], ["title", "Gastropubs"], ["price", "$$"], ["created_at", "2018-05-10 18:51:41.840026"], ["updated_at", "2018-05-10 18:51:41.840026"]]
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "zip_code", "address", "title", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Broadstone Bar & Kitchen"], ["zip_code", 10004], ["address", "88 Broad St"], ["title", "American (New)"], ["price", "$$"], ["created_at", "2018-05-10 18:51:41.850779"], ["updated_at", "2018-05-10 18:51:41.850779"]]
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "zip_code", "address", "title", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Sauce & Barrel"], ["zip_code", 10006], ["address", "97 Washington St"], ["title", "Bars"], ["price", "$$"], ["created_at", "2018-05-10 18:51:41.860165"], ["updated_at", "2018-05-10 18:51:41.860165"]]
+  [1m[35m (5.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 941ms (ActiveRecord: 99.0ms)
+
+
+Started GET "/api/v1/restaurants" for 127.0.0.1 at 2018-05-10 14:51:50 -0400
+Processing by Api::V1::RestaurantsController#index as HTML
+  [1m[36mRestaurant Load (1.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+Completed 200 OK in 14ms (Views: 12.2ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-05-10 14:57:24 -0400
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"zip_code"=>"10004", "event"=>{"zip_code"=>"10004"}}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.6ms)[0m  [1m[32mINSERT INTO "musics" ("name", "zip_code", "address", "title", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "The Dead Rabbit"], ["zip_code", 10004], ["address", "30 Water St"], ["title", "Cocktail Bars"], ["price", "$$"], ["created_at", "2018-05-10 18:57:25.316441"], ["updated_at", "2018-05-10 18:57:25.316441"]]
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (4.7ms)[0m  [1m[32mINSERT INTO "musics" ("name", "zip_code", "address", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Mailroom"], ["zip_code", 10005], ["address", "110 Wall St"], ["title", "Bars"], ["created_at", "2018-05-10 18:57:25.332877"], ["updated_at", "2018-05-10 18:57:25.332877"]]
+  [1m[35m (9.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (9.6ms)[0m  [1m[32mINSERT INTO "musics" ("name", "zip_code", "address", "title", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "The Black Hound"], ["zip_code", 10280], ["address", "301 S End Ave"], ["title", "Bars"], ["price", "$$"], ["created_at", "2018-05-10 18:57:25.350249"], ["updated_at", "2018-05-10 18:57:25.350249"]]
+  [1m[35m (7.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (9.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.5ms)[0m  [1m[32mINSERT INTO "musics" ("name", "zip_code", "address", "title", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "The Wooly"], ["zip_code", 10279], ["address", "11 Barclay St"], ["title", "Venues & Event Spaces"], ["price", "$$"], ["created_at", "2018-05-10 18:57:25.381064"], ["updated_at", "2018-05-10 18:57:25.381064"]]
+  [1m[35m (12.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (8.7ms)[0m  [1m[32mINSERT INTO "musics" ("name", "zip_code", "address", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "23 Wall Morgan House"], ["zip_code", 10005], ["address", "23 Wall St"], ["title", "Venues & Event Spaces"], ["created_at", "2018-05-10 18:57:25.402528"], ["updated_at", "2018-05-10 18:57:25.402528"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "musics" ("name", "zip_code", "address", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Ariel Music and Events"], ["zip_code", 7030], ["address", "50 Harrison St"], ["title", "Performing Arts"], ["created_at", "2018-05-10 18:57:25.417377"], ["updated_at", "2018-05-10 18:57:25.417377"]]
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (18.9ms)[0m  [1m[32mINSERT INTO "musics" ("name", "zip_code", "address", "title", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Pier A Harbor House"], ["zip_code", 10004], ["address", "22 Battery Pl"], ["title", "Bars"], ["price", "$$"], ["created_at", "2018-05-10 18:57:25.427293"], ["updated_at", "2018-05-10 18:57:25.427293"]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "musics" ("name", "zip_code", "address", "title", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "The Growler Bites & Brews"], ["zip_code", 10004], ["address", "55 Stone St"], ["title", "Breweries"], ["price", "$$"], ["created_at", "2018-05-10 18:57:25.452598"], ["updated_at", "2018-05-10 18:57:25.452598"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (5.7ms)[0m  [1m[32mINSERT INTO "musics" ("name", "zip_code", "address", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Masterpiece Caterers"], ["zip_code", 10004], ["address", "1 Hanover Sq"], ["title", "Venues & Event Spaces"], ["created_at", "2018-05-10 18:57:25.459360"], ["updated_at", "2018-05-10 18:57:25.459360"]]
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "musics" ("name", "zip_code", "address", "title", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "BlackTail"], ["zip_code", 10004], ["address", "22 Battery Pl"], ["title", "Cuban"], ["price", "$$$"], ["created_at", "2018-05-10 18:57:25.473188"], ["updated_at", "2018-05-10 18:57:25.473188"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 937ms (ActiveRecord: 150.4ms)
+
+
+Started GET "/api/v1/musics" for 127.0.0.1 at 2018-05-10 14:57:37 -0400
+Processing by Api::V1::MusicsController#index as HTML
+  [1m[36mMusic Load (7.2ms)[0m  [1m[34mSELECT "musics".* FROM "musics"[0m
+Completed 200 OK in 20ms (Views: 11.2ms | ActiveRecord: 7.2ms)
+
+
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-05-10 14:59:05 -0400
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"zip_code"=>"10001", "event"=>{"zip_code"=>"10001"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (6.7ms)[0m  [1m[32mINSERT INTO "bars" ("name", "zip_code", "address", "created_at", "updated_at", "title", "price") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "District Social"], ["zip_code", 10018], ["address", "252 W 37th St"], ["created_at", "2018-05-10 18:59:06.357161"], ["updated_at", "2018-05-10 18:59:06.357161"], ["title", "Bars"], ["price", "$$"]]
+  [1m[35m (3.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.1ms)[0m  [1m[32mINSERT INTO "bars" ("name", "zip_code", "address", "created_at", "updated_at", "title", "price") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Patent Pending"], ["zip_code", 10001], ["address", "49 W 27th St"], ["created_at", "2018-05-10 18:59:06.373005"], ["updated_at", "2018-05-10 18:59:06.373005"], ["title", "Speakeasies"], ["price", "$$$"]]
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "bars" ("name", "zip_code", "address", "created_at", "updated_at", "title", "price") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Oscar Wilde"], ["zip_code", 10001], ["address", "45 W 27th St"], ["created_at", "2018-05-10 18:59:06.387538"], ["updated_at", "2018-05-10 18:59:06.387538"], ["title", "Cocktail Bars"], ["price", "$$"]]
+  [1m[35m (8.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "bars" ("name", "zip_code", "address", "created_at", "updated_at", "title", "price") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Juniper"], ["zip_code", 10001], ["address", "237 W 35th St"], ["created_at", "2018-05-10 18:59:06.402778"], ["updated_at", "2018-05-10 18:59:06.402778"], ["title", "Cocktail Bars"], ["price", "$$"]]
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.7ms)[0m  [1m[32mINSERT INTO "bars" ("name", "zip_code", "address", "created_at", "updated_at", "title", "price") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "One Star"], ["zip_code", 10011], ["address", "147 W 24th St"], ["created_at", "2018-05-10 18:59:06.414596"], ["updated_at", "2018-05-10 18:59:06.414596"], ["title", "Bars"], ["price", "$"]]
+  [1m[35m (8.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.9ms)[0m  [1m[32mINSERT INTO "bars" ("name", "zip_code", "address", "created_at", "updated_at", "title", "price") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Haymaker Bar and Kitchen"], ["zip_code", 10001], ["address", "252 W 29th St"], ["created_at", "2018-05-10 18:59:06.429885"], ["updated_at", "2018-05-10 18:59:06.429885"], ["title", "Gastropubs"], ["price", "$$"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.0ms)[0m  [1m[32mINSERT INTO "bars" ("name", "zip_code", "address", "created_at", "updated_at", "title", "price") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "The Maze"], ["zip_code", 10001], ["address", "32 W 32nd St"], ["created_at", "2018-05-10 18:59:06.438802"], ["updated_at", "2018-05-10 18:59:06.438802"], ["title", "Korean"], ["price", "$$"]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.4ms)[0m  [1m[32mINSERT INTO "bars" ("name", "zip_code", "address", "created_at", "updated_at", "title", "price") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "The Ginger Man"], ["zip_code", 10016], ["address", "11 E 36th St"], ["created_at", "2018-05-10 18:59:06.449002"], ["updated_at", "2018-05-10 18:59:06.449002"], ["title", "Bars"], ["price", "$$"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (7.0ms)[0m  [1m[32mINSERT INTO "bars" ("name", "zip_code", "address", "created_at", "updated_at", "title", "price") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "District Tap House"], ["zip_code", 10018], ["address", "246 W 38th St"], ["created_at", "2018-05-10 18:59:06.459352"], ["updated_at", "2018-05-10 18:59:06.459352"], ["title", "Sports Bars"], ["price", "$$"]]
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "bars" ("name", "zip_code", "address", "created_at", "updated_at", "title", "price") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "On Now Lounge"], ["zip_code", 10001], ["address", "431 7th Ave"], ["created_at", "2018-05-10 18:59:06.476221"], ["updated_at", "2018-05-10 18:59:06.476221"], ["title", "Lounges"], ["price", "$$"]]
+  [1m[35m (6.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "zip_code", "address", "title", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "District Social"], ["zip_code", 10018], ["address", "252 W 37th St"], ["title", "Bars"], ["price", "$$"], ["created_at", "2018-05-10 18:59:07.146520"], ["updated_at", "2018-05-10 18:59:07.146520"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "zip_code", "address", "title", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Haymaker Bar and Kitchen"], ["zip_code", 10001], ["address", "252 W 29th St"], ["title", "Gastropubs"], ["price", "$$"], ["created_at", "2018-05-10 18:59:07.152272"], ["updated_at", "2018-05-10 18:59:07.152272"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "zip_code", "address", "title", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Calle Dao - Chelsea"], ["zip_code", 10011], ["address", "461 W 23rd St"], ["title", "Cuban"], ["price", "$$"], ["created_at", "2018-05-10 18:59:07.157704"], ["updated_at", "2018-05-10 18:59:07.157704"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "zip_code", "address", "title", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Juniper"], ["zip_code", 10001], ["address", "237 W 35th St"], ["title", "Cocktail Bars"], ["price", "$$"], ["created_at", "2018-05-10 18:59:07.164076"], ["updated_at", "2018-05-10 18:59:07.164076"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "zip_code", "address", "title", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Death Ave"], ["zip_code", 10001], ["address", "315 10th Ave"], ["title", "Greek"], ["price", "$$"], ["created_at", "2018-05-10 18:59:07.171394"], ["updated_at", "2018-05-10 18:59:07.171394"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (5.9ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "zip_code", "address", "title", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Purple Rice Korean Kitchen"], ["zip_code", 10001], ["address", "263 W 30th St"], ["title", "Korean"], ["price", "$$"], ["created_at", "2018-05-10 18:59:07.178697"], ["updated_at", "2018-05-10 18:59:07.178697"]]
+  [1m[35m (3.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "zip_code", "address", "title", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Bea"], ["zip_code", 10036], ["address", "403 W 43rd St"], ["title", "American (New)"], ["price", "$$"], ["created_at", "2018-05-10 18:59:07.192482"], ["updated_at", "2018-05-10 18:59:07.192482"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "zip_code", "address", "title", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Trademark Taste & Grind"], ["zip_code", 10018], ["address", "38 W 36th St"], ["title", "Bars"], ["price", "$$"], ["created_at", "2018-05-10 18:59:07.198011"], ["updated_at", "2018-05-10 18:59:07.198011"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "zip_code", "address", "title", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Friedman's"], ["zip_code", 10001], ["address", "132 W 31st St"], ["title", "American (New)"], ["price", "$$"], ["created_at", "2018-05-10 18:59:07.204791"], ["updated_at", "2018-05-10 18:59:07.204791"]]
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (4.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "zip_code", "address", "title", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Momofuku Nishi"], ["zip_code", 10011], ["address", "232 8th Ave"], ["title", "Italian"], ["price", "$$"], ["created_at", "2018-05-10 18:59:07.219727"], ["updated_at", "2018-05-10 18:59:07.219727"]]
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "musics" ("name", "zip_code", "address", "title", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "The Flatiron Room"], ["zip_code", 10010], ["address", "37 W 26th St"], ["title", "Lounges"], ["price", "$$$"], ["created_at", "2018-05-10 18:59:08.005598"], ["updated_at", "2018-05-10 18:59:08.005598"]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (7.8ms)[0m  [1m[32mINSERT INTO "musics" ("name", "zip_code", "address", "title", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "The Red Door"], ["zip_code", 10011], ["address", "140 W 24th St"], ["title", "Music Venues"], ["price", "$"], ["created_at", "2018-05-10 18:59:08.016318"], ["updated_at", "2018-05-10 18:59:08.016318"]]
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "musics" ("name", "zip_code", "address", "title", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "The Heath"], ["zip_code", 10001], ["address", "542 W 27th St"], ["title", "Bars"], ["price", "$$$"], ["created_at", "2018-05-10 18:59:08.033721"], ["updated_at", "2018-05-10 18:59:08.033721"]]
+  [1m[35m (11.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "musics" ("name", "zip_code", "address", "title", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Shake Rattle N Roll Pianos"], ["zip_code", 10018], ["address", "306 West 39th St"], ["title", "Music Venues"], ["price", "$$"], ["created_at", "2018-05-10 18:59:08.049647"], ["updated_at", "2018-05-10 18:59:08.049647"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "musics" ("name", "zip_code", "address", "title", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "The Cutting Room"], ["zip_code", 10016], ["address", "44 E 32nd St"], ["title", "Bars"], ["price", "$$"], ["created_at", "2018-05-10 18:59:08.055386"], ["updated_at", "2018-05-10 18:59:08.055386"]]
+  [1m[35m (3.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "musics" ("name", "zip_code", "address", "title", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Pier 63 at Hudson River Park"], ["zip_code", 10011], ["address", "W 23rd St"], ["title", "Parks"], ["price", "$"], ["created_at", "2018-05-10 18:59:08.063323"], ["updated_at", "2018-05-10 18:59:08.063323"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "musics" ("name", "zip_code", "address", "title", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "The Stone"], ["zip_code", 10011], ["address", "55 West 13th St"], ["title", "Music Venues"], ["price", "$"], ["created_at", "2018-05-10 18:59:08.070164"], ["updated_at", "2018-05-10 18:59:08.070164"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "musics" ("name", "zip_code", "address", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Midtown Live"], ["zip_code", 10001], ["address", "251 W 30th St"], ["title", "Venues & Event Spaces"], ["created_at", "2018-05-10 18:59:08.079701"], ["updated_at", "2018-05-10 18:59:08.079701"]]
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "musics" ("name", "zip_code", "address", "title", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "The Village Underground"], ["zip_code", 10012], ["address", "130 W 3rd St"], ["title", "Dance Clubs"], ["price", "$$"], ["created_at", "2018-05-10 18:59:08.091401"], ["updated_at", "2018-05-10 18:59:08.091401"]]
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "musics" ("name", "zip_code", "address", "title", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Birdland Jazz Club"], ["zip_code", 10036], ["address", "315 W 44th St"], ["title", "Jazz & Blues"], ["price", "$$$"], ["created_at", "2018-05-10 18:59:08.101831"], ["updated_at", "2018-05-10 18:59:08.101831"]]
+  [1m[35m (7.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 2359ms (ActiveRecord: 253.2ms)
+
+
+Started GET "/api/v1/musics" for 127.0.0.1 at 2018-05-10 14:59:12 -0400
+Processing by Api::V1::MusicsController#index as HTML
+  [1m[36mMusic Load (7.9ms)[0m  [1m[34mSELECT "musics".* FROM "musics"[0m
+Completed 200 OK in 34ms (Views: 25.1ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/api/v1/bars" for 127.0.0.1 at 2018-05-10 14:59:35 -0400
+Processing by Api::V1::BarsController#index as HTML
+  [1m[36mBar Load (2.5ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+Completed 200 OK in 21ms (Views: 16.7ms | ActiveRecord: 2.5ms)
+
+
