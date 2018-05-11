@@ -7179,3 +7179,186 @@ Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.5ms)
   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
   [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "age", "email", "address", "zip_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["first_name", "Mallory"], ["last_name", "Keyboard"], ["age", 21], ["email", "mallory@keyboard.com"], ["address", "666 Hell st. New York, NY"], ["zip_code", 10023], ["created_at", "2018-05-11 13:06:23.376682"], ["updated_at", "2018-05-11 13:06:23.376682"]]
   [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-05-11 09:11:39 -0400
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (uninitialized constant Api::V1::EventsController::YELP_API_KEY):
+  
+app/controllers/api/v1/events_controller.rb:6:in `<class:EventsController>'
+app/controllers/api/v1/events_controller.rb:1:in `<top (required)>'
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-05-11 09:12:47 -0400
+Started GET "/api/v1/bars" for 127.0.0.1 at 2018-05-11 09:12:57 -0400
+Started GET "/api/v1/musics" for 127.0.0.1 at 2018-05-11 09:12:57 -0400
+Started GET "/api/v1/restaurants" for 127.0.0.1 at 2018-05-11 09:12:57 -0400
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"zip_code"=>"10023", "event"=>{"zip_code"=>"10023"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "bars" ("name", "zip_code", "address", "created_at", "updated_at", "title", "price") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Vanguard Wine Bar"], ["zip_code", 10023], ["address", "189 Amsterdam Ave"], ["created_at", "2018-05-11 13:12:58.282434"], ["updated_at", "2018-05-11 13:12:58.282434"], ["title", "Wine Bars"], ["price", "$$"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "bars" ("name", "zip_code", "address", "created_at", "updated_at", "title", "price") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "The Dead Poet"], ["zip_code", 10024], ["address", "450 Amsterdam Ave"], ["created_at", "2018-05-11 13:12:58.287891"], ["updated_at", "2018-05-11 13:12:58.287891"], ["title", "Bars"], ["price", "$$"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "bars" ("name", "zip_code", "address", "created_at", "updated_at", "title", "price") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Gebhard's Beer Culture"], ["zip_code", 10023], ["address", "228 W 72nd St"], ["created_at", "2018-05-11 13:12:58.291346"], ["updated_at", "2018-05-11 13:12:58.291346"], ["title", "Beer Bar"], ["price", "$$"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "bars" ("name", "zip_code", "address", "created_at", "updated_at", "title", "price") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "The Dakota Bar"], ["zip_code", 10023], ["address", "53 W 72nd St"], ["created_at", "2018-05-11 13:12:58.294885"], ["updated_at", "2018-05-11 13:12:58.294885"], ["title", "Lounges"], ["price", "$$"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "bars" ("name", "zip_code", "address", "created_at", "updated_at", "title", "price") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Dark Bullet Sake & Oyster Bar"], ["zip_code", 10023], ["address", "154 W 72nd St"], ["created_at", "2018-05-11 13:12:58.298329"], ["updated_at", "2018-05-11 13:12:58.298329"], ["title", "Japanese"], ["price", "$$"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (42.4ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "zip_code", "address", "title", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Ella Kitchen & Bar"], ["zip_code", 10023], ["address", "249 Columbus Ave"], ["title", "Tapas/Small Plates"], ["price", "$$"], ["created_at", "2018-05-11 13:12:58.752433"], ["updated_at", "2018-05-11 13:12:58.752433"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "zip_code", "address", "title", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Sole Bistro Italiano"], ["zip_code", 10023], ["address", "2014 Broadway"], ["title", "Italian"], ["price", "$$"], ["created_at", "2018-05-11 13:12:58.799680"], ["updated_at", "2018-05-11 13:12:58.799680"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "zip_code", "address", "title", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Le Pif"], ["zip_code", 10023], ["address", "2058 Broadway Ave"], ["title", "French"], ["price", "$$"], ["created_at", "2018-05-11 13:12:58.804371"], ["updated_at", "2018-05-11 13:12:58.804371"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "zip_code", "address", "title", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "The Milling Room"], ["zip_code", 10024], ["address", "446 Columbus Ave"], ["title", "American (New)"], ["price", "$$$"], ["created_at", "2018-05-11 13:12:58.808539"], ["updated_at", "2018-05-11 13:12:58.808539"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "zip_code", "address", "title", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "The Smith"], ["zip_code", 10023], ["address", "1900 Broadway"], ["title", "American (New)"], ["price", "$$"], ["created_at", "2018-05-11 13:12:58.813092"], ["updated_at", "2018-05-11 13:12:58.813092"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "musics" ("name", "zip_code", "address", "title", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Beacon Theatre"], ["zip_code", 10023], ["address", "2124 Broadway"], ["title", "Music Venues"], ["price", "$$"], ["created_at", "2018-05-11 13:12:59.365311"], ["updated_at", "2018-05-11 13:12:59.365311"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "musics" ("name", "zip_code", "address", "title", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Terminal 5"], ["zip_code", 10019], ["address", "610 W 56th St"], ["title", "Music Venues"], ["price", "$$"], ["created_at", "2018-05-11 13:12:59.369740"], ["updated_at", "2018-05-11 13:12:59.369740"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "musics" ("name", "zip_code", "address", "title", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Dizzy's Club Coca Cola"], ["zip_code", 10019], ["address", "10 Columbus Cir"], ["title", "Jazz & Blues"], ["price", "$$$"], ["created_at", "2018-05-11 13:12:59.374543"], ["updated_at", "2018-05-11 13:12:59.374543"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "musics" ("name", "zip_code", "address", "title", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "The Dead Poet"], ["zip_code", 10024], ["address", "450 Amsterdam Ave"], ["title", "Bars"], ["price", "$$"], ["created_at", "2018-05-11 13:12:59.377758"], ["updated_at", "2018-05-11 13:12:59.377758"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "musics" ("name", "zip_code", "address", "title", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Prohibition"], ["zip_code", 10024], ["address", "503 Columbus Ave"], ["title", "Bars"], ["price", "$$"], ["created_at", "2018-05-11 13:12:59.381348"], ["updated_at", "2018-05-11 13:12:59.381348"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 1779ms (ActiveRecord: 97.6ms)
+
+
+Processing by Api::V1::MusicsController#index as */*
+Processing by Api::V1::RestaurantsController#index as */*
+Processing by Api::V1::BarsController#index as */*
+  [1m[36mMusic Load (5.0ms)[0m  [1m[34mSELECT "musics".* FROM "musics"[0m
+  [1m[36mRestaurant Load (1.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+Completed 200 OK in 39ms (Views: 19.8ms | ActiveRecord: 14.7ms)
+
+
+Started GET "/api/v1/musics" for 127.0.0.1 at 2018-05-11 09:12:59 -0400
+Processing by Api::V1::MusicsController#index as */*
+  [1m[36mMusic Load (0.6ms)[0m  [1m[34mSELECT "musics".* FROM "musics"[0m
+Completed 200 OK in 21ms (Views: 20.2ms | ActiveRecord: 0.6ms)
+
+
+Completed 200 OK in 82ms (Views: 17.8ms | ActiveRecord: 59.3ms)
+
+
+  [1m[36mBar Load (14.5ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+Started GET "/api/v1/restaurants" for 127.0.0.1 at 2018-05-11 09:12:59 -0400
+Processing by Api::V1::RestaurantsController#index as */*
+  [1m[36mRestaurant Load (0.8ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/restaurants" for 127.0.0.1 at 2018-05-11 09:12:59 -0400
+Processing by Api::V1::RestaurantsController#index as */*
+Started GET "/api/v1/musics" for 127.0.0.1 at 2018-05-11 09:12:59 -0400
+Processing by Api::V1::MusicsController#index as */*
+  [1m[36mRestaurant Load (0.9ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+Completed 200 OK in 30ms (Views: 28.7ms | ActiveRecord: 0.8ms)
+
+
+  [1m[36mMusic Load (2.5ms)[0m  [1m[34mSELECT "musics".* FROM "musics"[0m
+Completed 200 OK in 8ms (Views: 5.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/api/v1/restaurants" for 127.0.0.1 at 2018-05-11 09:12:59 -0400
+Processing by Api::V1::RestaurantsController#index as */*
+  [1m[36mRestaurant Load (1.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+Completed 200 OK in 10ms (Views: 8.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/v1/restaurants" for 127.0.0.1 at 2018-05-11 09:12:59 -0400
+Processing by Api::V1::RestaurantsController#index as */*
+  [1m[36mRestaurant Load (0.6ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+Completed 200 OK in 12ms (Views: 11.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/restaurants" for 127.0.0.1 at 2018-05-11 09:12:59 -0400
+Processing by Api::V1::RestaurantsController#index as */*
+  [1m[36mRestaurant Load (0.8ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.8ms)
+
+
+Completed 200 OK in 220ms (Views: 39.7ms | ActiveRecord: 175.9ms)
+
+
+Started GET "/api/v1/restaurants" for 127.0.0.1 at 2018-05-11 09:12:59 -0400
+Processing by Api::V1::RestaurantsController#index as */*
+Started GET "/api/v1/bars" for 127.0.0.1 at 2018-05-11 09:12:59 -0400
+Processing by Api::V1::BarsController#index as */*
+  [1m[36mRestaurant Load (0.6ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[36mBar Load (0.6ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+Completed 200 OK in 10ms (Views: 8.3ms | ActiveRecord: 0.6ms)
+
+
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/restaurants" for 127.0.0.1 at 2018-05-11 09:12:59 -0400
+Processing by Api::V1::RestaurantsController#index as */*
+  [1m[36mRestaurant Load (0.7ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/restaurants" for 127.0.0.1 at 2018-05-11 09:12:59 -0400
+Processing by Api::V1::RestaurantsController#index as */*
+  [1m[36mRestaurant Load (12.6ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+Completed 200 OK in 17ms (Views: 4.2ms | ActiveRecord: 12.6ms)
+
+
+Started GET "/api/v1/restaurants" for 127.0.0.1 at 2018-05-11 09:12:59 -0400
+Processing by Api::V1::RestaurantsController#index as */*
+  [1m[36mRestaurant Load (0.7ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/restaurants" for 127.0.0.1 at 2018-05-11 09:12:59 -0400
+Processing by Api::V1::RestaurantsController#index as */*
+  [1m[36mRestaurant Load (0.9ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/v1/bars" for 127.0.0.1 at 2018-05-11 09:13:01 -0400
+Processing by Api::V1::BarsController#index as */*
+  [1m[36mBar Load (0.4ms)[0m  [1m[34mSELECT "bars".* FROM "bars"[0m
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/restaurants" for 127.0.0.1 at 2018-05-11 09:13:01 -0400
+Processing by Api::V1::RestaurantsController#index as */*
+  [1m[36mRestaurant Load (0.6ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+Completed 200 OK in 13ms (Views: 12.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-05-11 09:15:05 -0400
+  
+ActionController::RoutingError (uninitialized constant Api::V1::EventsController::YELP_API_KEY):
+  
+app/controllers/api/v1/events_controller.rb:6:in `<class:EventsController>'
+app/controllers/api/v1/events_controller.rb:1:in `<top (required)>'
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-05-11 09:15:34 -0400
+  [1m[35m (6.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"zip_code"=>"12222", "event"=>{"zip_code"=>"12222"}}
+Completed 500 Internal Server Error in 96ms (ActiveRecord: 10.8ms)
+
+
+  
+NoMethodError (undefined method `each' for nil:NilClass):
+  
+app/controllers/api/v1/events_controller.rb:47:in `create'
