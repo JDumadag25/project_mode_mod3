@@ -3,7 +3,7 @@ class Api::V1::EventsController < ApplicationController
   require "http"
   require "optparse"
 
-  API_KEY =  "apZZBw6ccgvvF4nG3wKtgxumzfTrKlu9v6mM0duku5Fdd3j8sFtHYB4GICPocL3yUUXwkAOAHaBvYJSYIuGVBcZMbgf5N0b1vcTnBEubtomJT1Ogb9Ds4s0Nm4_wWnYx"
+  API_KEY =  api_key
 
   API_HOST = "https://api.yelp.com"
   SEARCH_PATH = "/v3/businesses/search"
@@ -12,7 +12,7 @@ class Api::V1::EventsController < ApplicationController
   DEFAULT_BUSINESS_ID = "yelp-new-york"
   DEFAULT_TERM = "bar"
   DEFAULT_LOCATION = "New York, NY"
-  SEARCH_LIMIT = 10
+  SEARCH_LIMIT = 5
 
   def index
     @events = Event.all
@@ -41,6 +41,7 @@ def create
 
     response = HTTP.auth("Bearer #{API_KEY}").get(bar_url, params: params)
     bar_response = response.parse
+    # puts bar_response
     bar_array = bar_response["businesses"]
 
     bar_array.each do |bar|
@@ -51,6 +52,7 @@ def create
       bar_price = bar["price"]
       Bar.create(name: bar_name, zip_code: bar_zip_code, address: bar_address, title: bar_title, price: bar_price)
     end
+
 
     restaurant_url = "#{API_HOST}#{SEARCH_PATH}"
     params = {
@@ -72,6 +74,7 @@ def create
       Restaurant.create(name: restaurant_name, zip_code: restaurant_zip_code, address: restaurant_address, title: restaurant_title, price: restaurant_price)
     end
 
+
     music_url = "#{API_HOST}#{SEARCH_PATH}"
     params = {
       term: "music venue",
@@ -91,6 +94,7 @@ def create
       music_price = music["price"]
       Music.create(name: music_name, zip_code: music_zip_code, address: music_address, title: music_title, price: music_price)
     end
+
 
   end
 

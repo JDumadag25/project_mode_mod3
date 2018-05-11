@@ -39,6 +39,10 @@ p {
     text-align: center;
 }
 
+#lists {
+  font-size: 16px;
+}
+
 .search-bar {
   text-align: center;
 }
@@ -50,19 +54,15 @@ p {
     color: black;
 }
 
-#radiobutton{
+#buttonchoice{
   text-align: center;
   background: rgba(255,255,255,0.5);
   display: none;
 }
 
-#radiochoice {
-  display: inline-flex;
-  padding: 15px
-}
-
-input[type=radio] {
-   margin-left: 50px;
+#buttonchoice {
+  text-align: center;
+  padding: 15px;
 
 }
 
@@ -102,7 +102,6 @@ input[type=radio] {
     height: 540px;
     background: rgba(255,255,255,0.5);
     overflow: auto;
-
 }
 
 #eventheader {
@@ -138,12 +137,11 @@ input[type=radio] {
 
 <br>
 
-<div id="radiobutton">
-  <form id="radiochoice">
-    <input type="radio" name="event" value="restaurants" checked="checked"> Restaurants<br>
-    <input type="radio" name="event" value="bars"> Bars<br>
-    <input type="radio" name="event" value="music-venues"> Music Venues
-  </form>
+<div id="buttonchoice">
+  <button id="restaurants">Restaurants</button>
+  <button id="bars">Bars</button>
+  <button id="musicvenues">Music Venues</button>
+
     <!-- <ul class="box">
       <span><input name="categories" id="cb1" type="checkbox" /></span>
       <label for="cb1">Restaurants</label>
@@ -164,16 +162,12 @@ input[type=radio] {
 
   <div id="firstbox">
     <h3 id="eventheader">Places and events in your area:</h3>
-      <ul>
-        <li id="events_area"></li>
-      </ul>
+      <ul id="events_area"></ul>
   </div>
 
   <div id="secondbox">
     <h3 id="youreventheader"> Your places and events:</h3>
-      <ul>
-        <li id="events_saved"></li>
-      </ul>
+      <ul id="events_saved"></ul>
   </div>
 
 </div>
@@ -195,7 +189,7 @@ input[type=radio] {
 <script>
   $(document).ready(function(){
     $('#submit_button').on('click', function(){
-      $('#container, #radiobutton').fadeIn(1200);
+      $('#container, #buttonchoice').fadeIn(1200);
     });
   })
 </script>

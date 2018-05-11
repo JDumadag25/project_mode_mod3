@@ -16,7 +16,7 @@ end
 
 
 def create
-  @bar = Bar.create(bar_params)
+  bar = Bar.create(bar_params)
 end
 
  private
